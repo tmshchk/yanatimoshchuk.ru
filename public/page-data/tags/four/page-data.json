@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tags-js","path":"/tags/four/","result":{"data":{"allMdx":{"totalCount":1,"edges":[{"node":{"slug":"3123123","frontmatter":{"title":"Второй пост","url":"second-post"}}}],"nodes":[{"frontmatter":{"title":"Второй пост","url":"second-post"}}]}},"pageContext":{"tag":"four"}},"staticQueryHashes":[]}

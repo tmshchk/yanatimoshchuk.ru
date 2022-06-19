@@ -1,0 +1,60 @@
+@import '../components/variables';
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.page {
+  padding: 80px 60px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(66, 75, 92, 0.1);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: $black-color;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding-left: 25px;
+}
+
+li {
+  font-size: 1.125rem;
+  line-height: 2;
+
+  @media (max-width: 370px) {
+    font-size: 1rem;
+  }
+
+  a {
+    color: $black-color;
+    text-decoration: none;
+    border-bottom: 1px solid $grey-color;
+
+    &:hover {
+      color: $purple-color;
+      border-bottom: 1px dashed $purple-color;
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 30px;
+  text-decoration: none;
+  color: $purple-color;
+  border-radius: 100px;
+  border: 1px solid $purple-color;
+  padding: 10px 20px;
+
+  &:hover {
+    background: $purple-color;
+    color: #fff;
+  }
+}

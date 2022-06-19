@@ -1,0 +1,40 @@
+@import 'variables';
+
+header {
+  height: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: $grey-color;
+    padding: 10px 20px;
+    font-size: 1rem;
+
+    @media (max-width: 340px) {
+      padding: 5px 10px;
+    }
+  }
+
+  a:hover,
+  .active-link {
+    color: white;
+    border-radius: 100px;
+    background: $purple-color;
+    transition: all 0.2s;
+  }
+
+  a:not(:first-child) {
+    margin: 0px 20px;
+
+    @media (max-width: 355px) {
+      margin: 0;
+    }
+  }
+
+  a:last-child {
+    margin: 0px;
+  }
+}

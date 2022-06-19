@@ -1,0 +1,14 @@
+@import 'variables';
+
+.link {
+  a {
+    text-decoration: none;
+    color: $black-color;
+    border-bottom: 1px solid $grey-color;
+  }
+
+  a:hover {
+    color: $purple-color;
+    border-bottom: 1px solid $purple-color;
+  }
+}

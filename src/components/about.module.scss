@@ -1,0 +1,139 @@
+@import 'variables';
+
+.page {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(66, 75, 92, 0.1);
+  padding: 80px 60px;
+
+  @media (max-width: 440px) {
+    padding: 60px 40px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.5;
+    color: $black-color;
+    margin-bottom: 50px;
+
+    span {
+      color: $purple-color;
+    }
+
+    @media (max-width: 634px) {
+      font-size: 1.625rem;
+    }
+  }
+
+  p {
+    color: $black-color;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    flex-basis: 55%;
+
+    @media (max-width: 370px) {
+      font-size: 1rem;
+    }
+
+    span {
+      color: $purple-color;
+      font-weight: 600;
+    }
+  }
+
+  .flex {
+    display: flex;
+
+    @media (max-width: 906px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .photo {
+    margin-bottom: 20px;
+  }
+
+  .photo img {
+    object-fit: contain !important;
+  }
+
+  h2 {
+    color: $purple-color;
+    margin-top: 50px;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    margin-top: 20px;
+    padding-left: 25px;
+  }
+
+  li {
+    font-size: 1.125rem;
+    color: $black-color;
+    line-height: 2;
+
+    @media (max-width: 370px) {
+      font-size: 1rem;
+    }
+  }
+
+  .diploma {
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+
+  .diploma:not(:first-child) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .diploma:last-child {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .block-price {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+
+    @media (max-width: 598px) {
+      flex-direction: column;
+    }
+  }
+
+  .button {
+    border-radius: 100px;
+    border: 1px solid $purple-color;
+    color: $purple-color;
+    font-size: 1.125rem;
+    padding: 15px 25px;
+    background: #fff;
+
+    @media (max-width: 576px) {
+      padding: 15px 25px;
+    }
+  }
+
+  .button:hover {
+    background: $purple-color;
+    color: white;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .price {
+    font-size: 1.875rem;
+    display: inline-block;
+    color: $purple-color;
+    font-weight: 600;
+    margin-left: 20px;
+
+    @media (max-width: 598px) {
+      margin-left: 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}

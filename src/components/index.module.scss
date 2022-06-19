@@ -1,0 +1,16 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #FBFBFB;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}

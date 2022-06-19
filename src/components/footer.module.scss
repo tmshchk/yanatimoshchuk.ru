@@ -1,0 +1,24 @@
+@import 'variables';
+
+footer {
+  height: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $grey-color;
+  font-size: 0.875rem;
+
+  a,
+  a:visited {
+    text-decoration: none;
+    border-bottom: 1px solid $grey-color;
+    color: $grey-color;
+  }
+
+  a:hover {
+    color: $purple-color;
+    border-bottom: none;
+  }
+
+}

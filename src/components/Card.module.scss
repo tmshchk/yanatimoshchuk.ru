@@ -1,0 +1,69 @@
+@import 'variables';
+
+.body {
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid $light-grey-color;
+  flex-basis: 43%;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.category {
+  font-size: 0.875rem;
+  color: $grey-color;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: $black-color;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: $black-color;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.button {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid $purple-color;
+  color: $purple-color;
+  font-size: 0.875rem;
+}
+
+.button:hover {
+  background: $purple-color;
+  color: white;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+// .button:after {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .dot:after {
+//   content: '';
+//   display: block;
+//   width: 8px;
+//   height: 8px;
+//   border-radius: 100px;
+//   background: $purple-color;
+//   position: absolute;
+//   top: 5px;
+//   left: 0;
+//   box-shadow: 0px 0px 10px rgba(165, 128, 212, 0.25);
+// }
