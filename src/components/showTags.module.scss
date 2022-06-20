@@ -1,0 +1,12 @@
+@import 'variables';
+
+.active-link {
+  color: $purple-color;
+  border-bottom: 1px dashed $purple-color;
+}
+
+.aside-title {
+  color: $black-color;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}

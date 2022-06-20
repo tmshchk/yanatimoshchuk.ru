@@ -3,32 +3,28 @@ import { Link, graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import Seo from '../components/seo';
+import ShowTags from '../components/showTags';
 
-import * as post from '../components/BlogPost.module.scss';
+import * as styles from '../components/BlogPost.module.scss';
 
 function BlogPost({ data }) {
   return (
     <Layout>
       <Seo title={data.mdx.frontmatter.title} />
-      <main className={`${post.container} ${post.body}`}>
-        <article>
-          <h2 className={post.title}>{data.mdx.frontmatter.title}</h2>
-          <p className={post.category}>
-            Опубликован <span>{data.mdx.frontmatter.date}</span>
-            <br />
-            Рубрика:{' '}
-            <span>
-              {data.mdx.frontmatter.tags.map((tag) => {
-                return (
-                  <Link to={`/tags/${tag}`} className={post.categoryLink}>
-                    {tag}
-                  </Link>
-                );
-              })}
-            </span>
+      <main className={`${styles.container}`}>
+        <article className={`${styles.body} ${styles.post}`}>
+          <h2 className={styles.title}>{data.mdx.frontmatter.title}</h2>
+          <p className={styles.category}>
+            {data.mdx.frontmatter.date} в рубрике&nbsp;
+            {data.mdx.frontmatter.tags.map((tag) => {
+              return <Link to={`/blog/${tag}`}>{tag}</Link>;
+            })}
           </p>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </article>
+        <aside className={styles.aside}>
+          <ShowTags />
+        </aside>
       </main>
     </Layout>
   );

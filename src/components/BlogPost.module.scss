@@ -1,8 +1,26 @@
 @import 'variables';
 
 .container {
-  max-width: 650px;
+  max-width: 1170px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+
+.post {
+  flex-basis: 39.8%;
+  margin-bottom: 40px;
+}
+
+.aside {
+  padding-left: 30px;
 }
 
 .body {
@@ -18,7 +36,8 @@
   }
 
   span {
-    color: $purple-color;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   ul {
@@ -43,16 +62,28 @@
     color: $grey-color;
     margin-bottom: 30px;
     position: relative;
+
+    a {
+      color: $purple-color;
+      text-decoration: none;
+      margin-right: 8px;
+
+      &:hover {
+        border-bottom: 1px dashed $purple-color;
+      }
+    }
   }
 
-  img {
-    border-radius: 10px !important;
-  }
+
+}
+
+img {
+  border-radius: 10px !important;
 }
 
 .category-link {
   margin-right: 4px;
-  color: $grey-color;
+  color: $purple-color;
   text-decoration: none;
 }
 

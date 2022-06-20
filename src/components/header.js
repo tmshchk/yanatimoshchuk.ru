@@ -12,9 +12,6 @@ const Header = () => {
         <Link activeClassName={styles.activeLink} to="/blog">
           Статьи
         </Link>
-        <Link activeClassName={styles.activeLink} to="/tags">
-          Рубрики
-        </Link>
         <Link activeClassName={styles.activeLink} to="/contacts">
           Контакты
         </Link>

@@ -12,9 +12,18 @@
 
 .category {
   font-size: 0.875rem;
-  color: $grey-color;
   margin-bottom: 20px;
   position: relative;
+
+  a {
+    color: $purple-color;
+    text-decoration: none;
+    margin-right: 8px;
+
+    &:hover {
+      border-bottom: 1px dashed $purple-color;
+    }
+  }
 }
 
 .title {

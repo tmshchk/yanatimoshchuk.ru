@@ -28,15 +28,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
-  // handle errors
+  // Ловим ошибки
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    reporter.panicOnBuild(
+      `Случилась какая-то ошибка при загрузке статей. Попробуйте обновить страницу, должно помочь.`,
+    );
     return;
   }
 
   const posts = result.data.postsRemark.edges;
 
-  // Create post detail pages
+  // Создаём страницы для постов
   posts.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.url,
@@ -45,16 +47,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  // Extract tag data from query
   const tags = result.data.tagsGroup.group;
 
-  // Make tag pages
+  // Создаём страницу категории
   tags.forEach((tag) => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/blog/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,
+      },
+    });
+  });
+
+  // Create blog-list pages
+  const postsPerPage = 2;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: path.resolve('./src/templates/blog.js'),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
       },
     });
   });

@@ -2,48 +2,37 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/layout';
-import Card from '../components/Card';
-import Seo from '../components/seo';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import ShowTags from '../components/showTags';
+import Layout from '../../components/layout';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
+import ShowTags from '../../components/showTags';
 
 import * as styles from './tags.module.scss';
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMdx;
+  const tagHeader = `Записи в рубрике «${tag}»`;
 
   return (
     <Layout>
-      <Seo title="Статьи" />
-      <div className={`${styles.container}`}>
-        <main className={styles.postsList}>
+      <ShowTags />
+      <main className={`${styles.container} ${styles.page}`}>
+        <ul>
           {edges.map(({ node }) => {
             const { slug } = node;
             const { title, url } = node.frontmatter;
             return (
-              <Card
-                key={node.id}
-                category={node.frontmatter.tags.map((tag) => {
-                  return (
-                    <Link key={node.id} to={`/blog/${tag}`}>
-                      {tag}
-                    </Link>
-                  );
-                })}
-                title={node.frontmatter.title}
-                description={node.frontmatter.description}
-                link={`/${node.frontmatter.url}`}
-              />
+              <li key={slug}>
+                <Link to={`/${url}`}>{title}</Link>
+              </li>
             );
           })}
-        </main>
-        <aside className={styles.aside}>
-          <ShowTags />
-        </aside>
-      </div>
+        </ul>
+        <Link to="/tags" className={styles.button}>
+          Посмотреть все рубрики
+        </Link>
+      </main>
     </Layout>
   );
 };
@@ -87,8 +76,6 @@ export const pageQuery = graphql`
           frontmatter {
             title
             url
-            description
-            tags
           }
         }
       }
