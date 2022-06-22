@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import './footer.module.scss';
+import * as styles from './footer.module.scss';
 
 const Footer = () => (
   <footer>
-    <p>
+    <p className={styles.p}>
       Сделал с 💜{' '}
       <a href="https://timoshchuk.ru" rel="noreferrer" target="_blank">
         Александр Тимощук

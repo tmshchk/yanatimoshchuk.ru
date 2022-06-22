@@ -1,8 +1,7 @@
 @import 'variables';
 
 header {
-  height: 100px;
-  text-align: center;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,9 +11,14 @@ header {
     color: $grey-color;
     padding: 10px 20px;
     font-size: 1rem;
+    margin: 0 10px;
 
     @media (max-width: 340px) {
       padding: 5px 10px;
+    }
+
+    @media (max-width: 546px) {
+      margin: 10px;
     }
   }
 
@@ -26,15 +30,28 @@ header {
     transition: all 0.2s;
   }
 
-  a:not(:first-child) {
-    margin: 0px 20px;
+  // a:not(:first-child) {
+  //   margin: 0px 20px;
 
-    @media (max-width: 355px) {
-      margin: 0;
-    }
-  }
+  //   @media (max-width: 355px) {
+  //     margin: 0;
+  //   }
+  // }
 
-  a:last-child {
-    margin: 0px;
-  }
+  // a:last-child {
+  //   margin: 0px;
+  // }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.consultation {
+  border: 1px solid $purple-color;
+  border-radius: 100px;
+  color: $purple-color;
 }

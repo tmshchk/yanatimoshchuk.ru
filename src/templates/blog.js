@@ -2,8 +2,6 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import Header from '../components/header';
-import Footer from '../components/footer';
 import Seo from '../components/seo';
 import ShowTags from '../components/showTags';
 import Card from '../components/Card';
@@ -19,15 +17,15 @@ function BlogPage({ data, pageContext }) {
 
   return (
     <Layout>
-      <Seo title="Статьи" />
+      <Seo title="Статьи" description="Статьи психолога, сказкотерапевта Яны Тимощук" />
       <div className={styles.container}>
         <main className={styles.postsList}>
           {data.allMdx.nodes.map((post, i) => (
             <Card
               key={post.id}
-              category={post.frontmatter.tags.map((tag) => {
+              category={post.frontmatter.tags.map((tag, i) => {
                 return (
-                  <Link key={i} to={`/tags/${tag}`}>
+                  <Link key={i} to={`/blog/${tag}`}>
                     {tag}
                   </Link>
                 );
@@ -39,17 +37,23 @@ function BlogPage({ data, pageContext }) {
           ))}
           <nav className={styles.pagination}>
             {!isFirst && (
-              <Link to={prevPage} rel="prev">
+              <Link className={styles.a} to={`/blog/${prevPage}`} rel="prev">
                 ←
               </Link>
             )}
-            {Array.from({ length: numPages }, (_, i) => (
-              <Link key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? '' : i + 1}`}>
-                {i + 1}
-              </Link>
-            ))}
+            {numPages !== 1
+              ? Array.from({ length: numPages }, (_, i) => (
+                  <Link
+                    key={`pagination-number${i + 1}`}
+                    to={`/blog/${i === 0 ? '' : i + 1}`}
+                    className={styles.a}
+                    activeClassName={styles.activeLink}>
+                    {i + 1}
+                  </Link>
+                ))
+              : ''}
             {!isLast && (
-              <Link to={nextPage} rel="next">
+              <Link className={styles.a} to={`/blog/${nextPage}`} rel="next">
                 →
               </Link>
             )}

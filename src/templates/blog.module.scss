@@ -21,18 +21,18 @@
   padding-left: 30px;
 }
 
-h1 {
+.h1 {
   font-size: 2rem;
   line-height: 1.5;
   color: $black-color;
   margin-bottom: 20px;
 }
 
-ul {
+.ul {
   padding-left: 25px;
 }
 
-li {
+.li {
   font-size: 1.125rem;
   line-height: 2;
 
@@ -40,7 +40,7 @@ li {
     font-size: 1rem;
   }
 
-  a {
+  .a {
     color: $black-color;
     text-decoration: none;
     border-bottom: 1px solid $grey-color;
@@ -65,17 +65,32 @@ li {
 }
 
 .pagination {
-  a {
+  display: flex;
+  flex-wrap: wrap;
+
+  .active-link {
+    color: $purple-color !important;
+    font-weight: 600;
+    border: 1px solid $purple-color;
+    border-radius: 5px;
+
+    &:hover {
+      color: #fff !important;
+    }
+  }
+
+  .a {
     margin-right: 10px;
     color: $grey-color;
     text-decoration: none;
-    border-radius: 100px;
-    border: 1px solid $grey-color;
     padding: 10px 15px;
 
     &:hover {
-      color: $purple-color;
+      color: #fff;
       border-color: $purple-color;
+      background-color: $purple-color;
+      border-radius: 5px;
     }
   }
 }
+

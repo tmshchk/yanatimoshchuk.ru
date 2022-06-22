@@ -36,13 +36,13 @@ function ShowTags() {
       <h2 className={styles.asideTitle}>Рубрики</h2>
       <ul>
         <li>
-          <Link activeClassName={styles.activeLink} to="/blog">
+          <Link activeClassName={styles.activeLink} to="/blog/">
             все рубрики
           </Link>
         </li>
         {unique.map((tag, i) => (
           <li key={i}>
-            <Link activeClassName={styles.activeLink} to={`/blog/${tag}`}>
+            <Link key={i + 1} activeClassName={styles.activeLink} to={`/blog/${tag}`}>
               {tag}
             </Link>
           </li>

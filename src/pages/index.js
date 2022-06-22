@@ -1,22 +1,15 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Seo from '../components/seo';
 import * as about from '../components/about.module.scss';
 import * as styles from '../components/index.module.scss';
 
 function IndexPage() {
-  const onClickButton = () => {
-    window.open(
-      'https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=timoshchuk&InvId=0&Culture=ru&Encoding=utf-8&Description=%D0%98%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%AF%D0%BD%D1%8B%20%D0%A2%D0%B8%D0%BC%D0%BE%D1%89%D1%83%D0%BA&OutSum=2000&SignatureValue=c6cee757e09f220f09edf9c734d99afb',
-      '_blank',
-    );
-  };
-
   return (
     <Layout>
-      <Seo title="Обо мне" />
+      <Seo title="Обо мне" description="О психологе, сказкотерапевте Яне Тимощук" />
       <main className={`${styles.container} ${about.page}`}>
         <h1>
           <span>Психологические консультации</span>
@@ -88,18 +81,29 @@ function IndexPage() {
           <li>арт-терапия</li>
           <li>песочная терапия</li>
         </ul>
-        <h2>Как попасть на консультацию</h2>
+        <h2 id="how-to-get-consultation">Как попасть на консультацию</h2>
         <ul>
-          <li>оформите заказ, нажав на кнопку ниже</li>
-          <li>заполните анкету, которая откроется после оплаты</li>
-          <li>после изучения анкеты я свяжусь с вами для уточнения деталей и даты встречи</li>
-          <li>в согласованный день мы встречаемся с вами очно или онлайн</li>
+          <li>перед консультацией необходимо заполнить анкету</li>
+          <li>чтобы открыть анкету, нажмите на кнопку ниже</li>
+          <li>
+            после изучения анкеты я свяжусь с вами для уточнения деталей и вышлю ссылку для оплаты
+            консультации
+          </li>
+          <li>
+            после оплаты консультации мы встречаемся с вами в согласованный день очно или онлайн
+          </li>
         </ul>
         <div className={about.blockPrice}>
-          <button onClick={onClickButton} className={about.button}>
-            Оформить заказ
+          <button
+            onClick={(e) =>
+              window.open(
+                'https://docs.google.com/forms/d/e/1FAIpQLSco12TTRF1fzvH1wwI1RZota1vhgwupJfjONXczL4w4UztmYA/viewform',
+              )
+            }
+            className={about.button}>
+            Заполнить анкету
           </button>
-          <p className={about.price}>2 000₽</p>
+          {/* <p className={about.price}>2 000₽</p> */}
         </div>
       </main>
     </Layout>

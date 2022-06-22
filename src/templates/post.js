@@ -10,14 +10,18 @@ import * as styles from '../components/BlogPost.module.scss';
 function BlogPost({ data }) {
   return (
     <Layout>
-      <Seo title={data.mdx.frontmatter.title} />
+      <Seo title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} />
       <main className={`${styles.container}`}>
         <article className={`${styles.body} ${styles.post}`}>
           <h2 className={styles.title}>{data.mdx.frontmatter.title}</h2>
           <p className={styles.category}>
             {data.mdx.frontmatter.date} в рубрике&nbsp;
-            {data.mdx.frontmatter.tags.map((tag) => {
-              return <Link to={`/blog/${tag}`}>{tag}</Link>;
+            {data.mdx.frontmatter.tags.map((tag, i) => {
+              return (
+                <Link key={i} to={`/blog/${tag}`}>
+                  {tag}
+                </Link>
+              );
             })}
           </p>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
@@ -37,6 +41,7 @@ export const PostQuery = graphql`
         title
         tags
         url
+        description
         date(formatString: "DD.MM.YYYY")
       }
       body

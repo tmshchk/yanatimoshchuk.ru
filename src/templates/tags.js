@@ -1,34 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Card from '../components/Card';
 import Seo from '../components/seo';
-import Header from '../components/header';
-import Footer from '../components/footer';
 import ShowTags from '../components/showTags';
 
 import * as styles from './tags.module.scss';
 
-const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext;
-  const { edges, totalCount } = data.allMdx;
-
+const Tags = ({ data, pageContext }) => {
   return (
     <Layout>
-      <Seo title="Статьи" />
+      <Seo title="Статьи" description={`Статьи психолога Яны Тимощук на тему ${pageContext.tag}`} />
       <div className={`${styles.container}`}>
         <main className={styles.postsList}>
-          {edges.map(({ node }) => {
-            const { slug } = node;
-            const { title, url } = node.frontmatter;
+          {data.allMdx.edges.map(({ node }) => {
             return (
               <Card
                 key={node.id}
-                category={node.frontmatter.tags.map((tag) => {
+                category={node.frontmatter.tags.map((tag, i) => {
                   return (
-                    <Link key={node.id} to={`/blog/${tag}`}>
+                    <Link key={`${node.id}_${i + 1}`} to={`/blog/${tag}`}>
                       {tag}
                     </Link>
                   );
@@ -48,28 +41,28 @@ const Tags = ({ pageContext, data }) => {
   );
 };
 
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-            }),
-            fields: PropTypes.shape({
-              slug: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired,
-      ),
-    }),
-  }),
-};
+// Tags.propTypes = {
+//   pageContext: PropTypes.shape({
+//     tag: PropTypes.string.isRequired,
+//   }),
+//   data: PropTypes.shape({
+//     allMdx: PropTypes.shape({
+//       totalCount: PropTypes.number.isRequired,
+//       edges: PropTypes.arrayOf(
+//         PropTypes.shape({
+//           node: PropTypes.shape({
+//             frontmatter: PropTypes.shape({
+//               title: PropTypes.string.isRequired,
+//             }),
+//             fields: PropTypes.shape({
+//               slug: PropTypes.string.isRequired,
+//             }),
+//           }),
+//         }).isRequired,
+//       ),
+//     }),
+//   }),
+// };
 
 export default Tags;
 
@@ -84,6 +77,7 @@ export const pageQuery = graphql`
       edges {
         node {
           slug
+          id
           frontmatter {
             title
             url

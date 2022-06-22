@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Seo from '../components/seo';
 
 import * as page from '../components/index.module.scss';
@@ -10,7 +10,7 @@ import * as contacts from '../components/contacts.module.scss';
 function ContactsPage() {
   return (
     <Layout>
-      <Seo title="Контакты" />
+      <Seo title="Контакты" description="Как связаться с психологом Яной Тимощук" />
       <main className={`${page.container} ${styles.page} ${contacts.link}`}>
         <h1>Контакты</h1>
         <h2>Социальные сети</h2>
