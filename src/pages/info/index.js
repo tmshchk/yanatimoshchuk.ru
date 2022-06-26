@@ -84,6 +84,12 @@ function InfoPage() {
           link="https://vk.com/raduga.skazok"
           buttonText="Открыть"
         />
+        <InfoBlock
+          title="Telegram-канал"
+          description="Заметки сказкотерапевта"
+          link="https://t.me/radugaskazok"
+          buttonText="Открыть"
+        />
       </main>
     </Layout>
   );

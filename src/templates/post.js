@@ -5,7 +5,8 @@ import Layout from '../components/Layout';
 import Seo from '../components/seo';
 import ShowTags from '../components/showTags';
 
-import * as styles from '../components/BlogPost.module.scss';
+import * as styles from './post.module.scss';
+import './postStyles.scss';
 
 function BlogPost({ data }) {
   return (
@@ -13,7 +14,7 @@ function BlogPost({ data }) {
       <Seo title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} />
       <main className={`${styles.container}`}>
         <article className={`${styles.body} ${styles.post}`}>
-          <h2 className={styles.title}>{data.mdx.frontmatter.title}</h2>
+          <h1 className={styles.title}>{data.mdx.frontmatter.title}</h1>
           <p className={styles.category}>
             {data.mdx.frontmatter.date} в рубрике&nbsp;
             {data.mdx.frontmatter.tags.map((tag, i) => {

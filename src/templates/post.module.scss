@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../components/variables';
 
 .container {
   max-width: 1170px;
@@ -17,6 +17,38 @@
 .post {
   flex-basis: 39.8%;
   margin-bottom: 40px;
+
+  blockquote {
+    padding-left: 15px;
+    border-left: 4px solid $purple-color;
+
+    & p {
+      color: $purple-color;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: $black-color;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+
+  li {
+    line-height: 1.5;
+  }
+
+  .link,
+  a {
+    color: $purple-color;
+    text-decoration: none;
+    border-bottom: 1px solid $purple-color;
+
+    &:hover {
+      border-bottom-style: dashed;
+    }
+  }
 }
 
 .aside {
@@ -77,7 +109,7 @@
 
 }
 
-img {
+.gatsby-resp-image-image img {
   border-radius: 10px !important;
 }
 

@@ -43,11 +43,37 @@
 
   .flex {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .flex-intro {
+    display: flex;
 
     @media (max-width: 906px) {
       flex-direction: column-reverse;
     }
   }
+
+  .diploma {
+    flex-basis: 300px;
+
+    @media (max-width: 440px) {
+      flex-basis: 45%;;
+    }
+  }
+
+  // .diploma:not(:first-child) {
+  //   margin-left: 10px;
+  //   margin-right: 10px;
+  // }
+
+  // .diploma:last-child {
+  //   margin-left: 0;
+  //   margin-right: 0;
+  // }
 
   .photo {
     margin-bottom: 20px;
@@ -62,10 +88,10 @@
     margin-top: 50px;
     font-size: 1.5rem;
     line-height: 1.5;
+    margin-bottom: 20px;
   }
 
   ul {
-    margin-top: 20px;
     padding-left: 25px;
   }
 
@@ -77,21 +103,6 @@
     @media (max-width: 370px) {
       font-size: 1rem;
     }
-  }
-
-  .diploma {
-    border-radius: 8px;
-    margin-top: 30px;
-  }
-
-  .diploma:not(:first-child) {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .diploma:last-child {
-    margin-left: 0;
-    margin-right: 0;
   }
 
   .block-price {

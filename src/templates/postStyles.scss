@@ -1,0 +1,8 @@
+.gatsby-resp-image-image {
+  border-radius: 10px;
+}
+
+.gatsby-image-wrapper picture > img {
+  object-position: bottom;
+  // object-fit: contain !important;
+}

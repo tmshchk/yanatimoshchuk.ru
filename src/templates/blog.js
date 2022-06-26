@@ -22,6 +22,7 @@ function BlogPage({ data, pageContext }) {
         <main className={styles.postsList}>
           {data.allMdx.nodes.map((post, i) => (
             <Card
+              image={post.frontmatter.image ? post.frontmatter.image : ''}
               key={post.id}
               category={post.frontmatter.tags.map((tag, i) => {
                 return (
@@ -79,6 +80,11 @@ export const PostsQuery = graphql`
           date(formatString: "DD.MM.YYYY")
           tags
           url
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         id
         body
