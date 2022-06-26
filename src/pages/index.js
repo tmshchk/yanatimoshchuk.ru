@@ -49,7 +49,7 @@ function IndexPage() {
           <li>член Международного Союза Сказкотерапевтов</li>
           <li>
             автор книги «
-            <a href="https://timoshchuk.ru/book" target="_blank">
+            <a href="https://timoshchuk.ru/book" rel="noreferrer" target="_blank">
               Измерение Добрых Измерений
             </a>
             »

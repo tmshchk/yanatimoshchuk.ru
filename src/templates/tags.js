@@ -18,6 +18,7 @@ const Tags = ({ data, pageContext }) => {
           {data.allMdx.edges.map(({ node }) => {
             return (
               <Card
+                image={node.frontmatter.image ? node.frontmatter.image : ''}
                 key={node.id}
                 category={node.frontmatter.tags.map((tag, i) => {
                   return (
@@ -83,6 +84,11 @@ export const pageQuery = graphql`
             url
             description
             tags
+            image {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
         }
       }
