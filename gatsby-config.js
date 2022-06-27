@@ -42,5 +42,16 @@ module.exports = {
         path: `${__dirname}/src/posts/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-yandex-metrica`,
+      options: {
+        trackingId: '89321326',
+        clickmap: false,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        trackHash: true,
+        webvisor: false,
+      },
+    },
   ],
 };

@@ -48,7 +48,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   // Создаём страницу со всеми записями
-  const postsPerPage = 30;
+  const postsPerPage = 10;
   const numPages = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({

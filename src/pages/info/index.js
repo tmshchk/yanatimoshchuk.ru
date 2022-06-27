@@ -16,17 +16,39 @@ function InfoPage() {
         description="Полезные материалы психолога, сказкотерапевта Яны Тимощук"
       />
       <main className={`${styles.container} ${info.page}`}>
-        <StaticImage
-          className={info.photo}
-          src="../../images/yanatimoshchuk.png"
-          alt="Яна Тимощук, психолог, сказкотерапевт"
-          quality="100"
+        <div className={info.flexIntro}>
+          <StaticImage
+            className={info.photo}
+            src="../../images/yanatimoshchuk.png"
+            alt="Яна Тимощук, психолог, сказкотерапевт"
+            quality="100"
+          />
+          <p className={info.textCenter}>
+            <span>Яна Тимощук</span>
+            <br />
+            Психолог-практик, сказкотерапевт
+          </p>
+        </div>
+        <hr className={info.hr} />
+        <h2 className={info.h2}>Бесплатно</h2>
+        <InfoBlock
+          title="Мини-консультация"
+          description="Консультация-знакомство, на которой я дам вам первые шаги для решения вашего запроса."
+          link="https://docs.google.com/forms/d/e/1FAIpQLSco12TTRF1fzvH1wwI1RZota1vhgwupJfjONXczL4w4UztmYA/viewform"
+          buttonText="Заполнить анкету"
         />
-        <p className={info.textCenter}>
-          <span>Яна Тимощук</span>
-          <br />
-          Психолог, сказкотерапевт.
-        </p>
+        <InfoBlock
+          title="Ой, всё!"
+          description="10 способов успокоиться, если накрывает волна раздражения"
+          link="https://raduga-skazok.ru/lp/10s/"
+          buttonText="Получить"
+        />
+        <InfoBlock
+          title="Радуга Сказок"
+          description="Мой авторский проект про сказкотерапию"
+          link="https://raduga-skazok.ru/"
+          buttonText="Читать"
+        />
         <hr className={info.hr} />
         <InfoBlock
           badge="моя книга"
@@ -55,26 +77,6 @@ function InfoPage() {
           description="Полные методические разработки в формате PDF с набором необходимых приложений"
           link="https://raduga-skazok.ru/produkty/"
           buttonText="Подробнее"
-        />
-        <hr className={info.hr} />
-        <h2 className={info.h2}>Бесплатно</h2>
-        <InfoBlock
-          title="Мини-консультация"
-          description="Консультация-знакомство, на которой я дам вам первые шаги для решения вашего запроса."
-          link="https://docs.google.com/forms/d/e/1FAIpQLSco12TTRF1fzvH1wwI1RZota1vhgwupJfjONXczL4w4UztmYA/viewform"
-          buttonText="Заполнить анкету"
-        />
-        <InfoBlock
-          title="Ой, всё!"
-          description="10 способов успокоиться, если накрывает волна раздражения"
-          link="https://raduga-skazok.ru/lp/10s/"
-          buttonText="Получить"
-        />
-        <InfoBlock
-          title="Радуга Сказок"
-          description="Мой авторский проект про сказкотерапию"
-          link="https://raduga-skazok.ru/"
-          buttonText="Читать"
         />
         <hr className={info.hr} />
         <h2 className={info.h2}>Социальные сети</h2>

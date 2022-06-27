@@ -11,6 +11,12 @@
   }
 }
 
+.flex-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .badge {
   display: block;
   color: $grey-color;
@@ -91,7 +97,6 @@
 
 .photo {
   width: 120px;
-  margin: 0px auto 20px auto;
   display: block;
 }
 

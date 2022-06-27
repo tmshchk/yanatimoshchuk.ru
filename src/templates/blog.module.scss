@@ -67,6 +67,7 @@
 .pagination {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 30px 40px 30px;
 
   .active-link {
     color: $purple-color !important;

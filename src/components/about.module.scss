@@ -77,6 +77,17 @@
 
   .photo {
     margin-bottom: 20px;
+
+    & img {
+      @media (max-width: 906px) {
+        width: 250px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 340px) {
+        width: auto;
+      }
+    }
   }
 
   .photo img {
