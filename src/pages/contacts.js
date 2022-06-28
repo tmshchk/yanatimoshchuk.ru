@@ -13,6 +13,8 @@ function ContactsPage() {
       <Seo title="Контакты" description="Как связаться с психологом Яной Тимощук" />
       <main className={`${page.container} ${styles.page} ${contacts.link}`}>
         <h1>Контакты</h1>
+        <h2>Очные консультации</h2>
+        <p>Краснодар, ул. Ставропольская, 87/2 — детский центр «Островок тепла».</p>
         <h2>Социальные сети</h2>
         <ul>
           <li>

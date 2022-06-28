@@ -28,8 +28,8 @@ function IndexPage() {
             семейных пар.
             <br />
             <br />
-            Очные и групповые консультации веду в Краснодаре: ул. Ставропольская, 87/2 — детский
-            центр «Островок тепла».
+            Очные и групповые консультации веду в Краснодаре: ул. Маяковского, 133/2 (ранее: ул.
+            Ставропольская, 87/1) — детский центр «Островок тепла».
             <br />
             <br />
             Онлайн-консультации по всему миру: Скайп, Зум, Вацап.
@@ -38,7 +38,6 @@ function IndexPage() {
             className={about.photo}
             src="../images/yanatimoshchuk.png"
             alt="Яна Тимощук, психолог, сказкотерапевт"
-            quality="100"
           />
         </div>
         <h2>Кратко обо мне</h2>
@@ -84,42 +83,12 @@ function IndexPage() {
         </ul>
         <h2>Дипломы</h2>
         <div className={about.flex}>
-          <StaticImage
-            className={about.diploma}
-            src="../images/d1.jpeg"
-            alt="Диплом 1"
-            quality="100"
-          />
-          <StaticImage
-            className={about.diploma}
-            src="../images/d2.jpeg"
-            alt="Диплом 2"
-            quality="100"
-          />
-          <StaticImage
-            className={about.diploma}
-            src="../images/d3.jpeg"
-            alt="Диплом 3"
-            quality="100"
-          />
-          <StaticImage
-            className={about.diploma}
-            src="../images/d4.jpg"
-            alt="Диплом 4"
-            quality="100"
-          />
-          <StaticImage
-            className={about.diploma}
-            src="../images/d5.jpg"
-            alt="Диплом 5"
-            quality="100"
-          />
-          <StaticImage
-            className={about.diploma}
-            src="../images/d6.jpg"
-            alt="Диплом 6"
-            quality="100"
-          />
+          <StaticImage className={about.diploma} src="../images/d1.jpeg" alt="Диплом 1" />
+          <StaticImage className={about.diploma} src="../images/d2.jpeg" alt="Диплом 2" />
+          <StaticImage className={about.diploma} src="../images/d3.jpeg" alt="Диплом 3" />
+          <StaticImage className={about.diploma} src="../images/d4.jpg" alt="Диплом 4" />
+          <StaticImage className={about.diploma} src="../images/d5.jpg" alt="Диплом 5" />
+          <StaticImage className={about.diploma} src="../images/d6.jpg" alt="Диплом 6" />
         </div>
         <h2>С чем ко мне обращаются</h2>
         <ul>

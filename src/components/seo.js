@@ -81,6 +81,19 @@ function Seo({ description, lang, meta, title }) {
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="msapplication-TileImage" content="./static/favicon/ms-icon-144x144.png" />
       <meta name="theme-color" content="#ffffff" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+        rel="preload"
+        as="style"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+        media="print"
+        onload="this.media='all'"
+      />
     </Helmet>
   );
 }
