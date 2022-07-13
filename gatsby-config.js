@@ -1,4 +1,5 @@
 module.exports = {
+  trailingSlash: 'always',
   siteMetadata: {
     title: `Яна Тимощук, психолог, сказкотерапевт в Краснодаре и по всему миру`,
     description: 'Яна Тимощук, психолог, сказкотерапевт в Краснодаре',
